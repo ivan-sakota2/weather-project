@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import "./App.css";
-import Card from "./components/Card";
-import Temperature from "./components/Temperature";
-import Wind from "./components/Wind";
-//import Symbol from "./components/Symbol";
+
 import NextDay from "./components/NextDay";
-import DayAfterTomorrow from "./components/DayAfterTomorrow";
+
 function App() {
+  const date = new Date();
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
   const [isLoading, setIsLoading] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
 
@@ -32,26 +34,21 @@ function App() {
   }
   const path = loadedData.properties.timeseries;
   return (
-    <div className="App">
+    <div className="app">
+      
       <Header></Header>
-      <h2>Today</h2>
-     
-      <div className="container1">
-        <h2>Time</h2>
-        <Card pth={path}></Card>
-      </div>
-      <div className="container2">
-        <h2>Temperature</h2>
-        <Temperature tpth={path}></Temperature>
-      </div>
-      <div className="container3">
-        <h2>Wind</h2>
-        <Wind wpth={path}></Wind>
-      </div>
-      <h2>-----------------</h2>
-      <NextDay npth={path}></NextDay>
-      <h2>-----------------</h2>
-      <DayAfterTomorrow dpth={path}></DayAfterTomorrow>
+      <h3>{`Today ${day}. ${date.toLocaleString("default", {
+        month: "long",
+      })}`}</h3>
+      <NextDay npth={path} day={day} month={month} year={year}></NextDay>
+      <h3>{` ${day + 1}. ${date.toLocaleString("default", {
+        month: "long",
+      })}`}</h3>
+      <NextDay npth={path} day={day + 1} month={month} year={year}></NextDay>
+      <h3>{` ${day + 2}. ${date.toLocaleString("default", {
+        month: "long",
+      })}`}</h3>
+      <NextDay npth={path} day={day + 2} month={month} year={year}></NextDay>
     </div>
   );
 }

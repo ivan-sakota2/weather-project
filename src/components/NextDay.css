@@ -1,14 +1,46 @@
-.container1 {
-  float: left;
-  width: 25%;
+.container1,
+.container2,
+.container3,
+.container4,
+.container5 {
+  background-color: rgba(23, 32, 41, 255);
+  text-align: center;
+
+  flex: 1;
+  list-style-type: none;
+}
+
+.container1,
+.container2,
+.container3,
+.container4 li {
+  position: relative;
+ 
+}
+
+
+
+.card{
+  display: flex;
+  width: 100%;
+}
+
+h3 {
+  color: rgba(251, 255, 255, 255);
+}
+
+.container1,
+.container3,
+.container4 {
+  color: rgba(212, 219, 224, 255);
 }
 
 .container2 {
-  float: left;
-  width: 25%;
+  color: rgba(209, 58, 86, 255);
 }
 
-.container3 {
-  float: left;
-  width: 50%;
+li{
+
+  border-bottom: solid rgba(59, 67, 80, 255);
+  border-bottom-width: thin;
 }

@@ -1,14 +1,4 @@
-.container1 {
-  float: left;
-  width: 25%;
+.app {
+  background-color: rgba(2, 11, 20, 255);
 }
 
-.container2 {
-  float: left;
-  width: 25%;
-}
-
-.container3 {
-  float: left;
-  width: 50%;
-}
