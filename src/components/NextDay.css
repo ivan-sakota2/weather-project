@@ -50,6 +50,7 @@ li {
 
 @media (max-width: 592px) {
   li {
+    padding: 10px;
   }
 }
 
